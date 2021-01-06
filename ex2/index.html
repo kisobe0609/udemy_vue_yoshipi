@@ -10,6 +10,8 @@
         <p>{{ message }}</p>
         <p>いいねの数：{{ likes }}</p>
         <button v-on:click="incrementLikes()">いいねする</button>
+        <p v-on:mousemove="getMousePosition">マウスをのせてください</p>
+        <p>マウスの位置：x:{{ x }}, y:{{ y }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
@@ -18,11 +20,17 @@
             el: '#app',
             data: {
                 message :'Hello Vue.js!',
-                likes: 0
+                likes: 0,
+                x: 0,
+                y: 0
             },
             methods: {
                 incrementLikes: function() {
                     this.likes++;
+                },
+                getMousePosition: function(event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
                 }
             }
         })

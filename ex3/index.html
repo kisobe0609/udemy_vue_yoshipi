@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-for="fruit in fruits" :key="fruit">
+            <p>{{ fruit }}</p>
+            <input type="text">
+        </div>
+        <button @click="remove">先頭を削除</button>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quo temporibus architecto, illum inventore libero facilis, quas aperiam iusto, tempore eos ullam adipisci aspernatur iste ab excepturi tempora dolorum dolore! Quia aspernatur sunt magni molestias quam? Itaque modi aut et eos quibusdam velit illum, quis laboriosam, eius saepe ipsa, id corrupti inventore illo quasi provident libero dolor. Velit similique eveniet fuga deserunt corrupti. Voluptatibus suscipit nihil consequatur numquam alias rerum ex quibusdam veritatis amet minus corrupti saepe placeat eum vitae magni quo ullam provident natus sit officiis similique, doloribus laborum. Tenetur dignissimos sapiente quisquam velit porro voluptate necessitatibus qui quae?</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fruits: ['りんご', 'バナナ', 'ぶどう']
+            },
+            methods: {
+                remove: function() {
+                    this.fruits.shift();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
